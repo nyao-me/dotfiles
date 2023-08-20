@@ -7,7 +7,7 @@ services:
     privileged: true
     container_name: ubuntu-dotfiles
     volumes:
-      - ./:/home/ubuntu
+      - ./setup.sh:/home/ubuntu/setup.sh
       - /var/run/docker.sock:/var/run/docker.sock
     tty: true
     networks:
