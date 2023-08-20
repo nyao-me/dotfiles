@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  ubuntu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu-dotfiles
+    volumes:
+      - ./:/home/ubuntu
+    tty: true
+    networks:
+      - ubuntu-dotfiles
+
+networks:
+  ubuntu-dotfiles:
+    driver: bridge
