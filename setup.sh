@@ -8,19 +8,9 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 # install software
-# build tools
+sudo apt install nano -y
 sudo apt-get install git -y
 sudo apt-get install build-essential -y
-
-# editor
-# nano
-sudo apt install nano -y
-
-# setup docker without sudo
-sudo groupadd docker
-sudo gpasswd -a $USER docker
-sudo systemctl restart docker
-#exit
 
 # install nodejs
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -36,7 +26,7 @@ echo 'export PATH=$N_PREFIX/bin:$PATH' >> $HOME/.bashrc
 
 source ~/.bashrc
 
-sudo n latest
+n latest
 
 echo "Installed node version: $(node -v)"
 echo "Installed npm version: $(npm -v)"
@@ -56,10 +46,10 @@ conda init
 conda config --set auto_activate_base true
 conda update --all -y
 
+
 source ~/.bashrc
 
-# echo 'export PATH=$HOME/anaconda3/bin:$PATH' >> $HOME/.bashrc
-
+rm $HONE/miniconda.sh
 # Install golang
 sudo apt update
 sudo add-apt-repository -y ppa:longsleep/golang-backports
@@ -72,5 +62,3 @@ echo 'export PATH=$PATH:$GOPATH/bin' >> $HOME/.bashrc
 
 source ~/.bashrc
 echo "Installed go version: $(go version)"
-
-echo "done!"
